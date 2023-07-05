@@ -1,0 +1,37 @@
+{
+    "RunContainer": false,
+    "OutputFolder": "",
+    "NumHeartBeatsForActivateResponse": 1,
+    "NumHeartBeatsForTerminateResponse": 600,
+    "AgentListeningPort": 56001,
+    "AssetDetails": [
+        {
+            "MountPath": "C:\\Assets",
+            "LocalFilePath": "/app/build.zip"
+        }
+    ],
+    "GameCertificateDetails": [],
+    "PortMappingsList": [
+        [
+            {
+                "NodePort": 56100,
+                "GamePort": {
+                    "Name": "game_port",
+                    "Number": 7777,
+                    "Protocol": "TCP"
+                }
+            }
+        ]
+    ],
+    "ProcessStartParameters": {
+        "StartGameCommand": "ChainOfAlliance-Server -maxFps 30"
+    },
+    "SessionConfig": {
+        "SessionId": "$SESSION_ID",
+        "SessionCookie": "$SESSION_COOKIE",
+        "InitialPlayers": [ "$PLAYER1", "$PLAYER2" ]
+    },
+    "TitleId": "81A05",
+    "BuildId": "00000000-0000-0000-0000-000000000000",
+    "Region": "NorthEurope"
+}

@@ -3,6 +3,18 @@
 
 # MpsAgent
 
+## Start
+
+```
+docker run 
+    -e SESSION_ID=match_id
+    -e SESSION_COOKIE=PvP|PvE|TournamentPvP|TournamentPvE
+    -e PLAYER1=account_id_player1 
+    -e PLAYER2=account_id_player1 
+    -p 56100:56100
+    coa-localserver:vx.y.z-B123-dev
+```
+
 ## Overview
 
 This repository contains source code for the following projects:
