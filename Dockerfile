@@ -10,9 +10,10 @@ RUN apt-get update
 RUN apt-get upgrade
 RUN apt-get install -y gettext zip unzip
 RUN mkdir out
+RUN mkdir /app/logs
 
 COPY --from=builder /build/out/* .
 COPY build.zip start.sh MultiplayerSettingsTemplate.json ./
 RUN rm MultiplayerSettings.json
 
-CMD [ "/app/start.sh"]
+CMD /app/start.sh
