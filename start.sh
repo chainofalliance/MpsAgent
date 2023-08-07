@@ -13,7 +13,7 @@ while [ ! -d $DIR_NAME ] && [ ! "$(ls -A $DIR_NAME)" ]; do
 
         while true; do 
             if [ -f $FILE_NAME ]; then 
-                chmod -R +x $FILE_NAME
+                chmod +x $FILE_NAME
                 break
             fi
             sleep 0.1
