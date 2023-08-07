@@ -7,8 +7,9 @@ while [ ! -d $DIR_NAME ] && [ ! "$(ls -A $DIR_NAME)" ]; do
     sleep 1
     
     if [ -d $DIR_NAME ] && [ "$(ls -A $DIR_NAME)" ]; then
-        export VM_DIR="/app/PlayFabVmAgentOutput/$(ls $DIR_NAME)/"
-        FILE_NAME="${VM_DIR}ExtAssets/SH0/A0/ChainOfAlliance-Server"
+        export VM_DIR="/app/PlayFabVmAgentOutput/$(ls $DIR_NAME)"
+        FILE_NAME="${VM_DIR}/ExtAssets/SH0/A0/ChainOfAlliance-Server"
+        echo "/app/PlayFabVmAgentOutput/$(ls $DIR_NAME)/" > vm_dir.txt
 
         while true; do 
             if [ -f $FILE_NAME ]; then 
@@ -19,5 +20,9 @@ while [ ! -d $DIR_NAME ] && [ ! "$(ls -A $DIR_NAME)" ]; do
         done
     fi
 done &
+
 ./LocalMultiplayerAgent
-cp -r "${VM_DIR}/GameLogs/449144f3-084b-472f-b8ac-85992ae4b543/PF_ConsoleLogs.txt" "/app/logs"
+
+VM_DIR=$(cat vm_dir.txt)
+LOGS_GUID=$(ls "$VM_DIR/GameLogs")
+cp -r "${VM_DIR}/GameLogs/${LOGS_GUID}/PF_ConsoleLogs.txt" "/app/logs/${SESSION_ID}.txt"

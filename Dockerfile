@@ -7,7 +7,7 @@ RUN cd LocalMultiplayerAgent && dotnet build --runtime linux-x64 -c Release -o /
 FROM mcr.microsoft.com/dotnet/sdk:7.0
 WORKDIR /app/
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 RUN apt-get install -y gettext zip unzip
 RUN mkdir out
 RUN mkdir /app/logs
