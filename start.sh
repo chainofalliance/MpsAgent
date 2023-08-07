@@ -4,7 +4,7 @@ envsubst < "MultiplayerSettingsTemplate.json" > "MultiplayerSettings.json"
 
 DIR_NAME="/app/PlayFabVmAgentOutput/"
 while [ ! -d $DIR_NAME ] && [ ! "$(ls -A $DIR_NAME)" ]; do 
-    sleep 1
+    sleep 0.1
     
     if [ -d $DIR_NAME ] && [ "$(ls -A $DIR_NAME)" ]; then
         export VM_DIR="/app/PlayFabVmAgentOutput/$(ls $DIR_NAME)"
@@ -16,7 +16,7 @@ while [ ! -d $DIR_NAME ] && [ ! "$(ls -A $DIR_NAME)" ]; do
                 chmod -R +x $FILE_NAME
                 break
             fi
-            sleep 1
+            sleep 0.1
         done
     fi
 done &
