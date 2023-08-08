@@ -16,4 +16,6 @@ COPY --from=builder /build/out/* .
 COPY build.zip start.sh MultiplayerSettingsTemplate.json ./
 RUN rm MultiplayerSettings.json
 
+EXPOSE 56100
+
 CMD /app/start.sh
