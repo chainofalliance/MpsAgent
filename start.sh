@@ -25,4 +25,4 @@ done &
 
 VM_DIR=$(cat vm_dir.txt)
 LOGS_GUID=$(ls "$VM_DIR/GameLogs")
-cp -r "${VM_DIR}/GameLogs/${LOGS_GUID}/PF_ConsoleLogs.txt" "/app/logs/${SESSION_ID}.txt"
+cp "${VM_DIR}/GameLogs/${LOGS_GUID}/PF_ConsoleLogs.txt" "/app/logs/${SESSION_ID}.txt"

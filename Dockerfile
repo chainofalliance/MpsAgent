@@ -17,5 +17,6 @@ COPY build.zip start.sh MultiplayerSettingsTemplate.json ./
 RUN rm MultiplayerSettings.json
 
 EXPOSE 56100
+EXPOSE 7777
 
 CMD /app/start.sh
