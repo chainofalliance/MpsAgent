@@ -2,7 +2,7 @@
     "RunContainer": false,
     "OutputFolder": "",
     "NumHeartBeatsForActivateResponse": 1,
-    "NumHeartBeatsForTerminateResponse": 30,
+    "NumHeartBeatsForTerminateResponse": 700,
     "AgentListeningPort": 56001,
     "AssetDetails": [
         {
