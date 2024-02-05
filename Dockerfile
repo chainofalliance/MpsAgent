@@ -12,6 +12,8 @@ RUN apt-get install -y gettext zip unzip
 RUN mkdir out
 RUN mkdir /app/logs
 
+RUN if [[ "$(uname -s)" == "Linux"* ]]; then export IS_LINUX_HOST=true; else export IS_LINUX_HOST=false; fi
+
 COPY --from=builder /build/out/* .
 COPY build.zip start.sh MultiplayerSettingsTemplate.json ./
 RUN rm MultiplayerSettings.json
