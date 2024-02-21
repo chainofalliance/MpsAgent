@@ -19,4 +19,5 @@ RUN rm MultiplayerSettings.json
 EXPOSE 56100
 EXPOSE 7777
 
+RUN chmod +x /app/start.sh
 CMD bash /app/start.sh
